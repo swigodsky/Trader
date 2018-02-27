@@ -383,8 +383,7 @@ blotter=[['Side','Ticker','Quantity','Executed Price','Execution Timestamp', 'Mo
 choice = 5
 while choice != 4:
     choice = main_menu()
-    print ('You chose ' + str(choice))
-
+    
     if choice == 1:
         blotter = trade(cash, blotter)
 
@@ -393,6 +392,3 @@ while choice != 4:
         
     elif choice == 3:
         profit_loss(blotter)
-
-if __name__=="__main__":
-    app.run(host='0.0.0.0')
