@@ -346,8 +346,8 @@ def updating_pl_values(blotter,pltable,equity_index,ticker):
 def profit_loss(blotter):
     pltable = [['Ticker','Position','Market','WAP','UPL','RPL'],['AAPL',0,'',0,0,0],['AMZN',0,'',0,0,0],['INTC',0,'',0,0,0],['MSFT',0,'',0,0,0],['SNAP',0,'',0,0,0],['Cash',0,0,' ',' ',' ']]
     if len(blotter)==1:
-        pltable[6][1] = 10000000 #cash on hand
-        pltable[6][2] = 10000000 
+        pltable[6][1] = 100000000 #cash on hand
+        pltable[6][2] = 100000000 
     
     else:
         aapl_index=[(i, value.index('AAPL')) for i, value in enumerate(blotter) if 'AAPL' in value]
@@ -377,7 +377,7 @@ def profit_loss(blotter):
     print('\n')        
 
     
-cash = 10000000
+cash = 100000000
 blotter=[['Side','Ticker','Quantity','Executed Price','Execution Timestamp', 'Money In/Out', 'Cash on Hand']]
 
 choice = 5
