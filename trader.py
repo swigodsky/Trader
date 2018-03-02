@@ -92,7 +92,7 @@ def transaction_cost(blotter,side,bid_ask,num_shares, ticker, st):    #calculati
     cost = num_shares*bid_ask
     cost = round(cost,2)
     if len(blotter)==1:
-        cash = 10000000
+        cash = 100000000
     else:
         cash = blotter[-1][6]
     if side == 'buy':
