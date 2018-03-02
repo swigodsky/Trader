@@ -17,8 +17,7 @@ def main_menu():    #function prints the menu on the screen and returns inputted
         print('2. Blotter\n')
         print('3. Show P/L\n')
         print('4. Quit\n')
-        number = input('Input the Number ')
-        
+        number = input('Input the Number ')  
     return(int(number))
 
 def buy_sell_menu():   #function to ask user if he/she wants to buy or sell
@@ -28,8 +27,7 @@ def buy_sell_menu():   #function to ask user if he/she wants to buy or sell
         print('Would you like to buy or sell?\n')
         print('1. Buy\n')
         print('2. Sell\n')
-        number = input('Input the Number ')
-    
+        number = input('Input the Number ')   
     return(number)
 
 def number_shares(side):  #user chooses number of shares to buy or sell
@@ -131,7 +129,6 @@ def trade(cash, blotter): #trading function
         print('4. Microsoft MSFT\n')
         print('5. Snap SNAP\n')
         number = input('Input the Number \n')
-    
     print('you chose ' + number)
     
     if number == '1':  #user chose Apple
@@ -381,20 +378,22 @@ def profit_loss(blotter):
         print("|",item[0]," "*(10-len(item[0])),"|",item[1]," "*(10-len(str(item[1]))),"|",item[2]," "*(10-len(str(item[2]))),"|",item[3]," "*(10-len(str(item[3]))),"|",item[4]," "*(10-len(str(item[4]))),"|",item[5]," "*(10-len(str(item[5]))),"|")
     print('\n')        
 
-    
-cash = 100000000
-blotter=[['Side','Ticker','Quantity','Executed Price','Execution Timestamp', 'Money In/Out', 'Cash on Hand']]
+def main():
+    cash = 100000000
+    blotter=[['Side','Ticker','Quantity','Executed Price','Execution Timestamp', 'Money In/Out', 'Cash on Hand']]
 
-choice = 5
-while choice != 4:
-    choice = main_menu()
+    choice = 5
+    while choice != 4:
+        choice = main_menu()
     
-    if choice == 1:
-        blotter = trade(cash, blotter)
+        if choice == 1:
+            blotter = trade(cash, blotter)
 
-    elif choice == 2:
-        print_blotter(blotter)
+        elif choice == 2:
+            print_blotter(blotter)
         
-    elif choice == 3:
-        profit_loss(blotter)
-        
+        elif choice == 3:
+            profit_loss(blotter)
+
+if __name__ == "__main__":
+    main()        
