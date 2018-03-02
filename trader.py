@@ -60,7 +60,7 @@ def yahoo_scraping(equity_num, side): #scraping Yahoo for asking or selling pric
     options = {1: "https://finance.yahoo.com/quote/AAPL?p=AAPL", 2: "https://finance.yahoo.com/quote/AMZN?p=AMZN", 3: "https://finance.yahoo.com/quote/INTC?p=INTC", 4: "https://finance.yahoo.com/quote/MSFT?p=MSFT", 5: "https://finance.yahoo.com/quote/SNAP?p=SNAP"}  
     url = options.get(equity_num,0)
     page = urllib.request.urlopen(url)
-    soup = bs4.BeautifulSoup(page.read(),"lxml")
+    soup = bs4.BeautifulSoup(page, 'html.parser')
     if side=='buy':
         bid_ask = soup.find('td', attrs={'data-test': 'ASK-value'}).get_text()
     elif side=='sell':
