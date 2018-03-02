@@ -18,6 +18,7 @@ def main_menu():    #function prints the menu on the screen and returns inputted
         print('3. Show P/L\n')
         print('4. Quit\n')
         number = input('Input the Number ')
+        
     return(int(number))
 
 def buy_sell_menu():   #function to ask user if he/she wants to buy or sell
@@ -28,12 +29,14 @@ def buy_sell_menu():   #function to ask user if he/she wants to buy or sell
         print('1. Buy\n')
         print('2. Sell\n')
         number = input('Input the Number ')
+    
     return(number)
 
 def number_shares(side):  #user chooses number of shares to buy or sell
     while True:     
         try:
             num_shares = int(input('How many shares would you like to '+ side + ' ?'))
+        
         except ValueError:
             print('Choose a number')
             continue
@@ -80,6 +83,7 @@ def confirmation():  #function to confirm if user wants to buy stock
     confirm="A"
     while (confirm not in choice):
         confirm = input("Are you still interested in buying this stock? Input Y/N\n")
+        
         confirm = confirm.upper()
     if confirm =="Y":
         print('You chose to buy the equity.\n')
@@ -127,6 +131,7 @@ def trade(cash, blotter): #trading function
         print('4. Microsoft MSFT\n')
         print('5. Snap SNAP\n')
         number = input('Input the Number \n')
+    
     print('you chose ' + number)
     
     if number == '1':  #user chose Apple
@@ -392,3 +397,4 @@ while choice != 4:
         
     elif choice == 3:
         profit_loss(blotter)
+        
