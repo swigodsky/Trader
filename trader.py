@@ -394,6 +394,7 @@ def main():
         
         elif choice == 3:
             profit_loss(blotter)
+    return()    
 
 if __name__ == "__main__":
     main()        
