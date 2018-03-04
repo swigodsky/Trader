@@ -374,8 +374,10 @@ def profit_loss(blotter):
             
     for item in pltable:
         if item[0] != 'Ticker' and item[0] != 'Cash':
+            item[3] = round(item[3],2)
+            item[4] = round(item[4],2)
             item[5] = round(item[5],2)
-        print("|",item[0]," "*(10-len(item[0])),"|",item[1]," "*(10-len(str(item[1]))),"|",item[2]," "*(10-len(str(item[2]))),"|",item[3]," "*(10-len(str(item[3]))),"|",item[4]," "*(10-len(str(item[4]))),"|",item[5]," "*(10-len(str(item[5]))),"|")
+        print("|",item[0]," "*(10-len(item[0])),"|",item[1]," "*(11-len(str(item[1]))),"|",item[2]," "*(11-len(str(item[2]))),"|",item[3]," "*(10-len(str(item[3]))),"|",item[4]," "*(10-len(str(item[4]))),"|",item[5]," "*(10-len(str(item[5]))),"|")
     print('\n')        
 
 def main():
